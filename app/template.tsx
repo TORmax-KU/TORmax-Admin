@@ -1,6 +1,3 @@
-
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import Script from 'next/script'
 
 export default async function Template({
@@ -11,12 +8,10 @@ export default async function Template({
 
     return (
         <div>
-                <Header />
                 <main>
                     {children} {/* Now has access to mock data */}
                     <Script src='https://static.matterport.com/showcase-sdk/latest.js' />
                 </main>
-                <Footer />
         </div>
     );
 }
