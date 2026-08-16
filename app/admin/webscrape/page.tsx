@@ -11,8 +11,7 @@ interface ScraperResponse {
 }
 
 export default function WebScrapeSettingsPage() {
-    const [apiKey, setApiKey] = useState('');
-    const [targetUrl, setTargetUrl] = useState('');
+    const [apiKey, setApiKey] = useState(process.env.NEXT_PUBLIC_SCRAPER_API_KEY || ''); const [targetUrl, setTargetUrl] = useState('');
     const [customPrompt, setCustomPrompt] = useState('');
     const [response, setResponse] = useState<ScraperResponse | null>(null);
     const [loading, setLoading] = useState(false);
