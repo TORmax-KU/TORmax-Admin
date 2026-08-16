@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import LogoutButton from "@/components/LogoutButton";
 import AdminHeader from "./AdminHeader";
 import AdminNavigator from "./AdminNavigator";
 
@@ -30,15 +29,10 @@ export function AdminAuthWrapper({ children }: { children: React.ReactNode }) {
 
     return (
         <div>
-            <AdminHeader/>
-            <div style={{
-                display: 'flex'
-            }}>
-                <AdminNavigator/>
-                <main>
-                    {children}
-                </main>
-            </div>
+            <AdminHeader />
+            <AdminNavigator>
+                {children}
+            </AdminNavigator>
         </div>
 
     );

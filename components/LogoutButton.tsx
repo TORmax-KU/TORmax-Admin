@@ -1,5 +1,6 @@
 'use client';
 
+import { RiLogoutBoxRLine } from '@remixicon/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -42,7 +43,7 @@ export default function LogoutButton({ className, style }: LogoutButtonProps) {
             }}
             disabled={loading}
         >
-            {loading ? 'Logging out...' : 'Logout'}
+            {loading ? 'Logging out...' : <RiLogoutBoxRLine/> }
         </button>
     );
 }

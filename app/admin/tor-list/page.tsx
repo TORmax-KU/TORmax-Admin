@@ -1,7 +1,8 @@
+
 export default function TORListPage() {
     return (
         <div>
-            TORListPage
+            TORsManagement
         </div>
     )
 }

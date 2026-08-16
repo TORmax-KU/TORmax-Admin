@@ -1,7 +1,8 @@
+
 export default function UserListPage() {
     return (
         <div>
-            UserListPage
+            UsersManagement
         </div>
     )
 }
