@@ -1,13 +1,9 @@
-import { AuthGuard } from "@/components/AuthGuard";
+import { AdminAuthWrapper } from "@/components/AdminAuthWrapper";
 
 export default function AdminLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return (
-        <AuthGuard>
-            {children}
-        </AuthGuard>
-    );
+    return <AdminAuthWrapper>{children}</AdminAuthWrapper>;
 }

@@ -27,28 +27,35 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }, []);
 
     const login = async (username: string, password: string): Promise<boolean> => {
-        try {
-            const response = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
+    try {
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+        });
 
-            const data = await response.json();
-
-            if (response.ok) {
-                setIsAuth(true);
-                localStorage.setItem('isAuth', 'true');
-                return true;
-            }
-            return false;
-        } catch (error) {
-            console.error('Login error:', error);
+        // Check if response is JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            console.error('Non-JSON response:', await response.text());
             return false;
         }
-    };
+
+        const data = await response.json();
+
+        if (response.ok) {
+            setIsAuth(true);
+            localStorage.setItem('isAuth', 'true');
+            return true;
+        }
+        return false;
+    } catch (error) {
+        console.error('Login error:', error);
+        return false;
+    }
+};
 
     const logout = () => {
         setIsAuth(false);
