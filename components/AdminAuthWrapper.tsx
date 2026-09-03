@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import AdminHeader from "./AdminHeader";
 import AdminNavigator from "./AdminNavigator";
+import { AdminOverviewHeader } from "./AdminOverviewHeader";
 
 export function AdminAuthWrapper({ children }: { children: React.ReactNode }) {
     const [isAuth, setIsAuth] = useState<boolean>(true);
@@ -29,7 +29,7 @@ export function AdminAuthWrapper({ children }: { children: React.ReactNode }) {
 
     return (
         <div>
-            <AdminHeader />
+            <AdminOverviewHeader />
             <AdminNavigator>
                 {children}
             </AdminNavigator>
