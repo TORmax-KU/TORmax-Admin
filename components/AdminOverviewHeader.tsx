@@ -1,8 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-import LogoutButton from './LogoutButton';
-
 interface AdminHeaderProps {
   t: {
     title: string;
@@ -35,10 +32,6 @@ export function AdminOverviewHeader({ t, onSyncClick }: AdminHeaderProps) {
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <Link href="/admin/overview" className="btn btn-outline btn-sm gap-2 text-base-content">
-          <i className="ri-bar-chart-box-line text-lg"></i>
-          {t.telemetryMetrics}
-        </Link>
         <button onClick={onSyncClick} className="btn btn-primary btn-sm gap-2">
           <i className="ri-refresh-line"></i>
           {t.executeSync}

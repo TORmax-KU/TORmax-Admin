@@ -19,10 +19,6 @@ export function OverviewHeader({ t, onPingClick }: OverviewHeaderProps) {
     <div className="border-b border-base-300 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div>
         <div className="flex items-center space-x-3">
-          <Link href="/admin" className="btn btn-outline btn-sm gap-2 font-bold text-base-content">
-            <i className="ri-arrow-left-line text-base"></i>
-            {t.backToAdmin}
-          </Link>
           <h1 className="text-2xl font-black tracking-tight flex items-center gap-2 text-base-content">
             <i className="ri-pulse-fill text-warning"></i>
             {t.title}

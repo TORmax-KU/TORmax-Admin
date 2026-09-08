@@ -1,5 +1,5 @@
-import LogoutButton from '@/components/LogoutButton';
 import React from 'react';
+import AdminHeader from '@/components/AdminHeader';
 
 export default function AdminLayout({
     children,
@@ -8,17 +8,7 @@ export default function AdminLayout({
 }) {
     return (
         <section className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 p-6">
-            {/* Optional Subpage Sub-header or Breadcrumbs */}
-            <header style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                padding: 25
-            }}>
-                <div style={{
-                    fontSize: 24
-                }}>Admin Dashboard</div>
-                <LogoutButton className="btn" />
-            </header>
+           <AdminHeader/>
             <main className="max-w-4xl mx-auto">
                 {children}
             </main>
