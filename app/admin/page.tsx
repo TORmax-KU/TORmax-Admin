@@ -12,8 +12,8 @@ import { useAdmin } from '@/components/useAdmin';
 import { UserTable } from '@/components/UserTable';
 import { useApp } from '@/context/AppContext';
 import { admini18n } from '@/public/mockdata/i18n/admin';
-import { Language } from '@/public/mockData/Language';
 import { TELEMETRY_HISTORY_DATA } from '@/public/mockdata/TelemetryHistoryData';
+import { OrganizationTable } from '@/components/OrganizationTable';
 
 export default function AdminPage() {
   const { lang: contextLang } = useApp();
@@ -72,6 +72,11 @@ export default function AdminPage() {
         />
       )}
 
+      {/* TAB NEW: ORGANIZATIONS */}
+      {activeTab === 'orgs' && (
+        <OrganizationTable />
+      )}
+
       {/* TAB 2: USER GOVERNANCE */}
       {activeTab === 'users' && (
         <UserTable
@@ -92,7 +97,7 @@ export default function AdminPage() {
           onRenderJsChange={setRenderJs}
           ultraPremiumProxies={ultraPremiumProxies}
           onProxiesChange={setUltraPremiumProxies}
-          onScrapeClick={(name) => {}}
+          onScrapeClick={(name) => { }}
           onAddLog={addLog}
           t={t}
         />

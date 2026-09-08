@@ -1,6 +1,6 @@
 'use client';
 
-type TabKey = 'ops' | 'users' | 'scraping' | 'diagnostics' | 'logs';
+type TabKey = 'ops' | 'users' | 'scraping' | 'diagnostics' | 'logs' | 'orgs';
 
 interface AdminTabsProps {
   activeTab: TabKey;
@@ -8,13 +8,8 @@ interface AdminTabsProps {
   torCount: number;
   userCount: number;
   logCount: number;
-  t: {
-    tabOps: string;
-    tabUsers: string;
-    tabScraping: string;
-    tabDiagnostics: string;
-    tabLogs: string;
-  };
+  orgCount?: number;
+  t: any;
 }
 
 export function AdminTabs({ 
@@ -22,15 +17,16 @@ export function AdminTabs({
   onTabChange, 
   torCount, 
   userCount, 
-  logCount, 
-  t 
+  logCount,
+  orgCount
 }: AdminTabsProps) {
   const tabs = [
-    { key: 'ops' as const, icon: 'ri-folder-open-line', label: t.tabOps, count: torCount },
-    { key: 'users' as const, icon: 'ri-team-line', label: t.tabUsers, count: userCount },
-    { key: 'scraping' as const, icon: 'ri-radar-line', label: t.tabScraping },
-    { key: 'diagnostics' as const, icon: 'ri-pulse-line', label: t.tabDiagnostics },
-    { key: 'logs' as const, icon: 'ri-terminal-box-line', label: t.tabLogs, count: logCount, isError: true },
+    { key: 'ops' as const, icon: 'ri-folder-open-line', label: 'การดำเนินการ TOR', count: torCount },
+    { key: 'orgs' as const, icon: 'ri-building-4-line', label: 'โครงสร้างองค์กร', count: orgCount },
+    { key: 'users' as const, icon: 'ri-team-line', label: 'จัดการผู้ใช้งาน', count: userCount },
+    { key: 'scraping' as const, icon: 'ri-radar-line', label: 'ระบบดึงข้อมูล (Scraping)' },
+    { key: 'diagnostics' as const, icon: 'ri-pulse-line', label: 'วิเคราะห์ระบบ' },
+    { key: 'logs' as const, icon: 'ri-terminal-box-line', label: 'บันทึกระบบ (Logs)', count: logCount, isError: true },
   ];
 
   return (
