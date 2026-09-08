@@ -9,7 +9,7 @@ export default function AdminLayout({
     return (
         <section className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 p-6">
            <AdminHeader/>
-            <main className="max-w-4xl mx-auto">
+            <main className="mx-auto">
                 {children}
             </main>
         </section>
