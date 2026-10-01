@@ -161,7 +161,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState<boolean>(false);
-  const [lang, setLang] = useState<Language>('EN');
+  const [lang, setLang] = useState<Language>('TH');
   const [mounted, setMounted] = useState<boolean>(false);
 
   // Initialize state from local storage or media preferences
